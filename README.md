@@ -47,6 +47,7 @@ The following CircuitPython libraries are required by this project (just copy th
 
 * adafruit_bitmap_font
 * adafruit_display_text
+* adafruit_imageload
 * adafruit_io
 * adafruit_magtag
 * adafruit_portalbase
@@ -58,3 +59,23 @@ The following CircuitPython libraries are required by this project (just copy th
 * adafruit_requests.mpy
 * neopixel.mpy
 * simpleio.mpy
+
+## Configuration
+
+This code repository includes a secrets.py file with mostly blank values for secrets that will need to be configured/populated in order for the code in code.py to work properly.
+
+#### Network Settings
+
+TODO
+
+#### AdaFruit IO Credentials
+
+TODO
+
+#### Time Zone Configuration
+
+TODO
+
+#### OpenWeather Credentials
+
+TODO

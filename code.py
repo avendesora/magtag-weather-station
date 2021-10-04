@@ -8,7 +8,6 @@ magtag.add_text(
         50,
         (magtag.graphics.display.height // 2) - 1,
     ),
-
     text_scale=3,
 )
 
