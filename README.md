@@ -21,7 +21,13 @@ The following hardware and software are required for this project.
 
 ### Hardware
 
-TODO
+This project uses the following hardware:
+
+* [AdaFruit MagTag](https://www.adafruit.com/product/4800) (I used the [MagTag Starter Kit](https://www.adafruit.com/product/4819), which includes magnet feet, display frames and hardware, and a lithium-ion battery in addition to the MagTag itself)
+* [AdaFruit BME688](https://www.adafruit.com/product/5046) (Pressure/Humidity/Temperature/Gas Sensor)
+* [AdaFruit SGP30](https://www.adafruit.com/product/3709) (Air Quality Sensor)
+* [STEMMA QT cables](https://www.adafruit.com/product/4210) for connected the sensors to the MagTag (x2)
+* A USB C cable and 5V 2A power supply
 
 ### Software
 
@@ -35,7 +41,7 @@ We're using CircuitPython on an AdaFruit MagTag. For information on how to get C
 
 There are many optional libraries available for CircuitPython. They are all available at [https://circuitpython.org/libraries](https://circuitpython.org/libraries).
 
-The following CircuitPython libraries are required by this project:
+The following CircuitPython libraries are required by this project (just copy them into the "lib" folder on the MagTag):
 
 ##### Folders
 
