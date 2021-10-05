@@ -52,34 +52,20 @@ icons_small_bmp, icons_small_pal = adafruit_imageload.load(ICONS_SMALL_FILE)
 # /////////////////////////////////////////////////////////////////////////
 
 
-def get_data_source_url(api="onecall", location=None):
+def get_data_source_url():
     """Build and return the URL for the OpenWeather API."""
-    if api.upper() == "FORECAST5":
-        URL = "https://api.openweathermap.org/data/2.5/forecast?"
-        URL += "q=" + location
-    elif api.upper() == "ONECALL":
-        URL = "https://api.openweathermap.org/data/2.5/onecall?exclude=minutely,hourly,alerts"
-        URL += "&lat={}".format(location[0])
-        URL += "&lon={}".format(location[1])
-    else:
-        raise ValueError("Unknown API type: " + api)
+    URL = (
+        "https://api.openweathermap.org/data/2.5/onecall?exclude=minutely,hourly,alerts"
+    )
+    URL += "&lat={}".format(secrets["latitude"])
+    URL += "&lon={}".format(secrets["longitude"])
 
     return URL + "&appid=" + secrets["openweather_token"]
 
 
-def get_latlon():
-    # This API endpoint doesn't appear to work anymore, getting 404, so I just put the lat/lon in secrets.
-    # """Use the Forecast5 API to determine lat/lon for given city."""
-    # magtag.url = get_data_source_url(api="forecast5", location=secrets["openweather_location"])
-    # magtag.json_path = ["city"]
-    # raw_data = magtag.fetch()
-    # return raw_data["coord"]["lat"], raw_data["coord"]["lon"]
-    return secrets["openweather_latitude"], secrets["openweather_longitude"]
-
-
-def get_forecast(location):
+def get_forecast():
     """Use OneCall API to fetch forecast and timezone data."""
-    resp = magtag.network.fetch(get_data_source_url(api="onecall", location=location))
+    resp = magtag.network.fetch(get_data_source_url())
     json_data = resp.json()
     return json_data["daily"], json_data["current"]["dt"], json_data["timezone_offset"]
 
@@ -250,13 +236,8 @@ for future_banner in future_banners:
 # ===========
 #  M A I N
 # ===========
-print("Getting Lat/Lon...")
-latlon = get_latlon()
-print(secrets["openweather_location"])
-print(latlon)
-
 print("Fetching forecast...")
-forecast_data, utc_time, local_tz_offset = get_forecast(latlon)
+forecast_data, utc_time, local_tz_offset = get_forecast()
 
 print("Updating...")
 update_today(forecast_data[0], local_tz_offset)

@@ -13,6 +13,6 @@ secrets = {
     # openweather_token is used to connect to https://openweathermap.org/api for
     # current outside temperature and weather forecast.
     "openweather_token": "",
-    "openweather_latitude": "",
-    "openweather_longitude": "",
+    "latitude": "",
+    "longitude": "",
 }
