@@ -64,18 +64,29 @@ The following CircuitPython libraries are required by this project (just copy th
 
 This code repository includes a secrets.py file with mostly blank values for secrets that will need to be configured/populated in order for the code in code.py to work properly.
 
-#### Network Settings
+#### Network Credentials and Settings
 
-TODO
+| Secret Name | Secret Description |
+| ----------- | ------------------ |
+| ssid        | Your wireless network name |
+| password    | Your wireless network password |
 
-#### AdaFruit IO Credentials
+#### AdaFruit IO Credentials and Settings
 
-TODO
+This project uses io.adafruit.com to get the current date and time based on the set timezone
 
-#### Time Zone Configuration
+| Secret Name  | Secret Description |
+| ------------ | ------------------ |
+| aio_username | Your username for your io.adafruit.com account |
+| aio_key      | Your API key for your io.adafruit.com account |
+| timezone     | Your local timezone (see http://worldtimeapi.org/timezones) |
 
-TODO
+#### OpenWeather Credentials and Settings
 
-#### OpenWeather Credentials
+This project uses the OpenWeather API to get current weather and forecast information. For the basic functionality that this project uses, a free account is sufficient. You can set that up at https://openweathermap.org/api.
 
-TODO
+| Secret Name       | Secret Description |
+| ----------------- | ------------------ |
+| openweather_token | Your openweather API token |
+| latitude          | Your local latitude value |
+| longitude         | Your local longitude value |
