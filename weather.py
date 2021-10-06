@@ -9,6 +9,7 @@ import adafruit_imageload
 from adafruit_display_text import label
 from adafruit_magtag.magtag import MagTag
 from secrets import secrets
+from constants import DAYS, MONTHS
 
 # --| USER CONFIG |--------------------------
 METRIC = False  # set to True for metric units
@@ -21,21 +22,6 @@ BACKGROUND_BMP = "/bmps/weather_bg.bmp"
 ICONS_LARGE_FILE = "/bmps/weather_icons_70px.bmp"
 ICONS_SMALL_FILE = "/bmps/weather_icons_20px.bmp"
 ICON_MAP = ("01", "02", "03", "04", "09", "10", "11", "13", "50")
-DAYS = ("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday")
-MONTHS = (
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-)
 magtag = MagTag()
 
 # ----------------------------
