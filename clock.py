@@ -17,8 +17,8 @@ magtag = MagTag()
 mid_x = magtag.graphics.display.width // 2 - 1
 magtag.add_text(
     text_font=terminalio.FONT,
-    text_scale=5,
-    text_position=(mid_x, 10),
+    text_scale=6,
+    text_position=(mid_x, 0),
     text_anchor_point=(0.5, 0),
     is_data=False,
 )
