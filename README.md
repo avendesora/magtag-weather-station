@@ -54,9 +54,11 @@ The following CircuitPython libraries are required by this project (just copy th
 
 ##### Files
 
+* adafruit_bme680.mpy
 * adafruit_fakerequests.mpy
 * adafruit_miniqr.mpy
 * adafruit_requests.mpy
+* adafruit_sgp30.mpy
 * neopixel.mpy
 * simpleio.mpy
 
