@@ -3,8 +3,9 @@
 # Modifications have since been made, but the original is copyright AdaFruit and licensed under the MIT license
 # (same as this code repository)
 import time
+
 from adafruit_magtag.magtag import MagTag
-import terminalio
+
 from constants import DAYS, MONTHS
 
 USE_AMPM_TIME = True

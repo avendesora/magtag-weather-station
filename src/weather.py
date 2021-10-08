@@ -8,8 +8,8 @@ import displayio
 import adafruit_imageload
 from adafruit_display_text import label
 from adafruit_magtag.magtag import MagTag
-from secrets import secrets
-from constants import DAYS, MONTHS
+from src.secrets import secrets
+from src.constants import DAYS, MONTHS
 
 # --| USER CONFIG |--------------------------
 METRIC = False  # set to True for metric units

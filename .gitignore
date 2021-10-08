@@ -129,10 +129,13 @@ dmypy.json
 .pyre/
 
 # CircuitPython libraries
-/lib
+src/lib/
 
 # VS Code settings
 settings.json
 
 # Scratch Folder/Files
-/scratch
+scratch/
+
+# PyCharm
+.idea/
