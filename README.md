@@ -1,5 +1,7 @@
 # MagTag Clock and Weather Station
 
+[![Test](https://github.com/avendesora/magtag-weather-station/actions/workflows/pytest.yml/badge.svg)](https://github.com/avendesora/magtag-weather-station/actions/workflows/pytest.yml)
+
 This is an (early stages) in-progress project to integrate an [AdaFruit MagTag](https://learn.adafruit.com/adafruit-magtag) with an analog wall clock to display indoor/outdoor temperature and humidity, indoor air quality, weather forecast, and maybe some other stuff.
 
 Pressing different buttons on the MagTag will display different information.
