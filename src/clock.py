@@ -7,6 +7,8 @@ import time
 from adafruit_magtag.magtag import MagTag
 
 from constants import DAYS, MONTHS
+from helpers import format_time
+
 
 USE_AMPM_TIME = True
 last_sync = None
@@ -33,28 +35,6 @@ magtag.add_text(
 magtag.set_text("DAY 00:00a", index=1, auto_refresh=False)
 
 
-def hh_mm(time_struct, twelve_hour=True):
-    """Given a time.struct_time, return a string as H:MM or HH:MM, either
-    12- or 24-hour style depending on twelve_hour flag.
-    """
-    postfix = ""
-    if twelve_hour:
-        if time_struct.tm_hour > 12:
-            hour_string = str(time_struct.tm_hour - 12)  # 13-23 -> 1-11 (pm)
-            postfix = "pm"
-        elif time_struct.tm_hour > 0:
-            hour_string = str(time_struct.tm_hour)  # 1-12
-            postfix = "am"
-            if time_struct.tm_hour == 12:
-                postfix = "pm"  # 12 -> 12 (pm)
-        else:
-            hour_string = "12"  # 0 -> 12 (am)
-            postfix = "am"
-    else:
-        hour_string = "{hh:02d}".format(hh=time_struct.tm_hour)
-    return hour_string + ":{mm:02d}".format(mm=time_struct.tm_min) + postfix
-
-
 while True:
     if not last_sync or (time.monotonic() - last_sync) > 3600:
         # at start or once an hour
@@ -66,7 +46,7 @@ while True:
 
     # minute updated, refresh display!
     if not last_minute or (last_minute != now.tm_min):
-        magtag.set_text(hh_mm(now, USE_AMPM_TIME), index=0)
+        magtag.set_text(format_time(now, USE_AMPM_TIME), index=0)
         last_minute = now.tm_min
 
     # day updated, refresh display!
